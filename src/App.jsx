@@ -29,7 +29,7 @@ function App() {
     try {
       const res = await api.post("/", input);
       console.log("Novo aluno adicionado: ", res.data);
-      setAlunos([...alunos, res.data]);
+      setAlunos(state => [...state, res.data]);
       setInput({ nome: "", cpf: "" });
     } catch (error) {
       console.log(error);
